@@ -1,0 +1,10 @@
+dd{
+    font-weight: bold;
+}
+
+div{
+    border-style: solid;
+    border-radius: 30px;
+    width: 30%;
+    padding: 2em;
+}

@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'hola-mundo';
+  public title:string = 'Hola mundo!';
+  public contador:number=0;
+
+
+  public aumentar=():void=>{
+      this.contador+=1;
+  }
+  public disminuir=():void=>{
+    this.contador-=1;
+  }
 }
