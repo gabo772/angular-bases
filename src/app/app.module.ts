@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { CounterComponent } from './counter/counter.component';
 import { HeroesModule } from './heroes/heroes.module';
 import { DbzModule } from './dbz/dbz.module';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MaterialExamplesModule } from './material-examples/material-examples.module';
+
+
 
 @NgModule({
   declarations: [
@@ -16,9 +20,12 @@ import { DbzModule } from './dbz/dbz.module';
     BrowserModule,
     HeroesModule,
     DbzModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialExamplesModule
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

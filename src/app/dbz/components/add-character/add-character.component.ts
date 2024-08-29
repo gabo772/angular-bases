@@ -22,6 +22,7 @@ export class AddCharacterComponent {
     this.character.name = "";
     this.character.power = 0;
 
+
   }
 
 }

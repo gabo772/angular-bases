@@ -1,0 +1,20 @@
+<div class="grid p-3 mr-0">
+    <div class="xl:col-2 xl:col-offset-5 lg:col-2 lg:col-offset-5 md:col-4 md:col-offset-4 col-6 col-offset-3 ">
+        <div class="flex flex-column shadow-8 p-3 border-round-2xl">
+            <span class="text-lg mb-4 text-center">Login</span>
+            <mat-form-field>
+                <mat-label>Usuario</mat-label>
+                <input type="text" placeholder="Nombre usuario" matInput>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input type="password" placeholder="Contraseña" matInput>
+            </mat-form-field>
+            <button mat-button mat-flat-button color="primary" (click)="onLogin()">
+                <mat-icon>save</mat-icon>
+                Ingresar
+            </button>
+
+        </div>
+    </div>
+</div>

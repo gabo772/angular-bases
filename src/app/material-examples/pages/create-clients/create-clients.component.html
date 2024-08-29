@@ -1,0 +1,69 @@
+<div class="grid mr-0">
+    <div class="lg:col-6 lg:col-offset-3  col-10 col-offset-1 mt-4 mb-4">
+        <p class="lg:text-6xl text-3xl text-center lg:text-left mt-4 mb-4 font-light">Ingreso de clientes</p>
+    </div>
+</div>
+<div class="grid mr-0">
+    <div class="lg:col-6 lg:col-offset-3 col-10 col-offset-1 border-1 border-round-xl shadow-6">
+        <div class="grid mt-3 mb-3">
+            <div class="col-3 flex align-items-center justify-content-end">
+                <p class="lg:text-2xl text-lg">Nombre</p>
+            </div>
+            <div class="col-9">
+                <mat-form-field class="lg:w-8 w-10">
+                    <mat-label>Ingrese nombre</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="grid mt-3 mb-3">
+            <div class="col-3 flex align-items-center justify-content-end">
+                <p class="lg:text-2xl text-lg">Apellido</p>
+            </div>
+            <div class="col-9">
+                <mat-form-field class="lg:w-8 w-10">
+                    <mat-label>Ingrese apellido</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="grid mt-3 mb-3">
+            <div class="col-3 flex align-items-center justify-content-end">
+                <p class="lg:text-2xl text-lg">Edad</p>
+            </div>
+            <div class="col-9">
+                <mat-form-field class="lg:w-3 w-10">
+                    <mat-label>Ingrese edad</mat-label>
+                    <input matInput type="number" placeholder="0">
+
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="grid mt-3 mb-3">
+            <div class="col-3 flex align-items-center justify-content-end">
+                <p class="lg:text-2xl text-lg">Genero</p>
+            </div>
+            <div class="col-9">
+                <mat-form-field class="lg:w-5 w-10">
+                    <mat-label>Seleccione genero</mat-label>
+                    <mat-select>
+                        <mat-option value="name">Femenino</mat-option>
+                        <mat-option value="lastname">Masculino</mat-option>
+                        <mat-option value="age">Otro</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="grid mt-3 mb-3">
+
+            <div class="lg:col-4 lg:col-offset-4 col-10 col-offset-1">
+                <div class="flex justify-content-center">
+                    <button mat-raised-button color="primary">Ingresar</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
