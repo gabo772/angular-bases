@@ -1,1 +1,55 @@
-<p>update-clients works!</p>
+<h1 mat-dialog-title>Editar Cliente</h1>
+<div mat-dialog-content>
+    <div class="grid">
+        <div class="col-3">
+            <h2>Nombre</h2>
+        </div>
+        <div class="col-9">
+            <mat-form-field class="w-full">
+
+                <input matInput [(ngModel)]="data.nombre" name="clientName">
+            </mat-form-field>
+        </div>
+
+
+
+
+    </div>
+    <div class="grid">
+        <div class="col-3">
+            <h2>Apellido</h2>
+        </div>
+        <div class="col-9">
+            <mat-form-field class="w-full">
+                <input matInput [(ngModel)]="data.apellido" name="clientLastname">
+            </mat-form-field>
+        </div>
+
+    </div>
+    <div class="grid">
+        <div class="col-3">
+            <h2>Fecha creacion</h2>
+        </div>
+        <div class="col-9">
+            <mat-form-field class="w-full">
+                <input matInput [(ngModel)]="data.createdAt" name="clientCreatedAt">
+            </mat-form-field>
+        </div>
+
+    </div>
+    <div class="grid">
+        <div class="col-3">
+            <h2>Email</h2>
+        </div>
+        <div class="col-9">
+            <mat-form-field class="w-full">
+                <input matInput [(ngModel)]="data.email" name="clientEmail">
+            </mat-form-field>
+        </div>
+
+    </div>
+</div>
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="primary" [mat-dialog-close]="data.nombre">Guardar</button>
+    <button mat-button color="primary" (click)="onNoClick()">Cerrar</button>
+</div>

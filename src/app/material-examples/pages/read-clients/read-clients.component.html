@@ -7,54 +7,59 @@
 <div class="grid">
     <div class="lg:col-6 lg:col-offset-3 col-10 col-offset-1">
         <div class="grid">
-            <mat-form-field class="lg:col-7 col-12">
+            <mat-form-field class="lg:col-4 lg:col-offset-4 col-12">
                 <mat-label>Consulta clientes</mat-label>
-                <input matInput>
-            </mat-form-field>
-            <mat-form-field class="lg:col-5 col-12">
-                <mat-label>Buscar por:</mat-label>
-                <mat-select>
-                    <mat-option value="name">Name</mat-option>
-                    <mat-option value="lastname">Last name</mat-option>
-                    <mat-option value="age">Age</mat-option>
-                </mat-select>
+                <input matInput #clientValue>
             </mat-form-field>
         </div>
     </div>
 </div>
+<ng-template #templateLoader>
+    <div class="grid mt-8">
+        <div class="lg:col-6 lg:col-offset-3 col-10 col-offset-1">
+            <div class="grid justify-content-center">
+                <mat-spinner></mat-spinner>
+            </div>
+
+        </div>
+    </div>
+</ng-template>
+
 <div class="grid">
-    <button mat-raised-button color="primary" class="col-2 col-offset-5">Buscar</button>
+    <button mat-raised-button color="primary" class="col-2 col-offset-5"
+        (click)="buscarClientes(clientValue.value)">Buscar</button>
 </div>
-<div class="grid">
+<div class="grid" *ngIf="!this.loader;else templateLoader">
     <div class="lg:col-4 lg:col-offset-4 col-10 col-offset-1 mt-4">
         <table mat-table [dataSource]="dataSource">
 
             <ng-component matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef>name</th>
-                <td mat-cell *matCellDef="let client">{{client.name}}</td>
+                <th mat-header-cell *matHeaderCellDef>Nombre</th>
+                <td mat-cell *matCellDef="let client">{{client.nombre}}</td>
             </ng-component>
             <ng-component matColumnDef="lastName">
-                <th mat-header-cell *matHeaderCellDef>last name</th>
-                <td mat-cell *matCellDef="let client">{{client.lastName}}</td>
+                <th mat-header-cell *matHeaderCellDef>Apellido</th>
+                <td mat-cell *matCellDef="let client">{{client.apellido}}</td>
             </ng-component>
-            <ng-component matColumnDef="age">
-                <th mat-header-cell *matHeaderCellDef>age</th>
-                <td mat-cell *matCellDef="let client">{{client.age}}</td>
+            <ng-component matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef>Email</th>
+                <td mat-cell *matCellDef="let client">{{client.email}}</td>
             </ng-component>
-            <ng-component matColumnDef="gender">
-                <th mat-header-cell *matHeaderCellDef>gender</th>
-                <td mat-cell *matCellDef="let client">{{client.gender}}</td>
+            <ng-component matColumnDef="createdAt">
+                <th mat-header-cell *matHeaderCellDef>Fecha creacion</th>
+                <td mat-cell *matCellDef="let client">{{client.createdAt}}</td>
             </ng-component>
             <ng-component matColumnDef="edit">
                 <th mat-header-cell *matHeaderCellDef></th>
-                <td mat-cell *matCellDef="let client"><button mat-icon-button color="primary">
+                <td mat-cell *matCellDef="let client"><button mat-icon-button color="primary"
+                        (click)="openDialog(client)">
                         <mat-icon>edit_note</mat-icon>
                     </button></td>
             </ng-component>
             <ng-component matColumnDef="delete">
                 <th mat-header-cell *matHeaderCellDef></th>
                 <td mat-cell *matCellDef="let client"><button mat-icon-button color="warn"
-                        (click)="onDelete(client.name)">
+                        (click)="onDelete(client.nombre)">
                         <mat-icon>delete_note</mat-icon>
                     </button></td>
             </ng-component>

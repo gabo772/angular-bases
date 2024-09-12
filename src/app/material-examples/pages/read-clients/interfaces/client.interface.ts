@@ -1,7 +1,7 @@
 export interface Client {
-    name: string;
-    lastName: string;
-    age: number;
-    gender: string;
+    nombre: string;
+    apellido: string;
+    email: string;
+    createdAt: string;
 
 }

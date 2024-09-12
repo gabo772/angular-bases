@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { ActivatedRoute } from '@angular/router';
+import { Client } from '../read-clients/interfaces/client.interface';
+
 
 @Component({
   selector: 'app-update-clients',
@@ -6,5 +10,16 @@ import { Component } from '@angular/core';
   styles: ``
 })
 export class UpdateClientsComponent {
+
+  constructor(
+    public dialogRef: MatDialogRef<UpdateClientsComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: Client,
+  ) { }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+
 
 }
